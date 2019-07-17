@@ -9,7 +9,7 @@ class SnakeView{
     this.board = new Board(this.snake, this.$el);
     this.setupBoard();
     let boundGL = this.gameLoop.bind(this);
-    this.intervalId = setInterval(boundGL, 300);
+    this.intervalId = setInterval(boundGL, 100);
     let boundOnKey = this.onKey.bind(this);
     this.board.addApple();
     this.addKeyHandler(boundOnKey);
