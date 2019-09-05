@@ -74,7 +74,7 @@ class SnakeView{
     $("html").off("keydown");
   }
   restartGame(e){
-    if(e.keyCode === 32){
+    if(e.keyCode){
       this.$el.empty();
       $(".gameover-message").remove();
       this.removeKeyHandler();
@@ -87,7 +87,7 @@ class SnakeView{
     clearTimeout(this.intervalId);
     let $h1 = $("<h1></h1>");
     let $body = $("body");
-    $h1.append("You Lose!<br>Press space to restart.").addClass("gameover-message");
+    $h1.append("You Lose!<br>Press any key to restart.").addClass("gameover-message");
     $body.append($h1);
     let boundRestart = this.restartGame.bind(this);
     this.addKeyHandler(boundRestart);
